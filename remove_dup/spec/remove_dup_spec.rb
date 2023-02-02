@@ -11,7 +11,6 @@ describe "remove_dup" do
   # end
 
 
-  it "should return a new arr"
 
   it "should only contain unique elements" do
     arr_1.each do |ele|
@@ -19,9 +18,14 @@ describe "remove_dup" do
     end
   end
 
-  it "should not mutate the original array"
+  it "should return a new array that does not mutate the original array" do
+    expect(arr_1.object_id).not_to eq(duped.object_id)
+    expect(duped).to be_a(Array)
+  end
 
-  it "should not include elements not in the original array"
+  it "should not include elements not in the original array" do
+    expect(duped.all?{|el|arr_1.include?(el)}).to eq(true)
+  end
 
 end
 
