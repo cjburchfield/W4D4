@@ -24,3 +24,18 @@ def two_sum(arr)
     pairs
 end
 
+
+def my_transpose(arr)
+
+ row = arr.length
+col = arr[0].length
+final = []
+(0...row).each do |i|
+  res = []
+  (0...col).each do |j|
+    res << arr[j][i]
+  end
+  final << res
+end
+    final
+end
